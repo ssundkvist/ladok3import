@@ -2,7 +2,9 @@ pipeline {
   agent any
   stages {
     stage('Check if package.json changed') {
-       bat "echo 'HEJ'"
+      steps {
+        bat "echo 'HEJ'"
+      }
     }
     stage('Build node_modules') {
       when {
