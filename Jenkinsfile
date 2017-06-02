@@ -1,5 +1,5 @@
 #!groovy
-@Library('psh') _
+@Library('psh@master') _
 
 pipeline {
   agent any
