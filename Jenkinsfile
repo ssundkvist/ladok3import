@@ -1,9 +1,12 @@
+#!groovy
+@Library('psh') _
+
 pipeline {
   agent any
   stages {
     stage('Check if package.json changed') {
       steps {
-        bat "echo 'HEJ'"
+        psh "echo 'HEJ'"
       }
     }
     stage('Build node_modules') {
