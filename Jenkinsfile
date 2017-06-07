@@ -21,7 +21,8 @@ pipeline {
       steps {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: '2c2b4395-2c37-4890-855b-8042337708f8', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
           bat '''
-                git checkout azure; if errorlevel 1 (
+                git checkout azure
+                if errorlevel 1 (
                   git status
                   git checkout -b azure
                 )
