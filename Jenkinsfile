@@ -14,6 +14,7 @@ pipeline {
         environment name: 'Rebuild', value: '1'
       }
       steps {
+        bat "echo rebuilding..."
         bat "${tool 'NodeJS65'}\\npm install"
       }
     }
