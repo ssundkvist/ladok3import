@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Build node_modules') {
       when {
-        environment name: 'Rebuild', value: '1'
+        environment name: 'Rebuild', value: '0'
       }
       steps {
         bat "echo rebuilding..."
