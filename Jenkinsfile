@@ -15,7 +15,7 @@ pipeline {
       }
       steps {
         bat "echo rebuilding..."
-        bat "${tool 'NodeJS65'}\\npm install"
+        bat "${tool 'NodeJS65'}\\npm install --scripts-prepend-node-path"
       }
     }
     stage('Push to Azure') {
