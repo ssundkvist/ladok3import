@@ -23,6 +23,7 @@ pipeline {
           bat '''
                 git checkout azure
                 if errorlevel 1 (
+                  git status
                   git checkout -b azure
                 )
                 git push "https://%GIT_USERNAME%:%GIT_PASSWORD%@sstladok3.scm.azurewebsites.net:443/sstladok3.git" azure
