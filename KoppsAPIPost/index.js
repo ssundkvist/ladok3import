@@ -4,7 +4,7 @@ module.exports = function (context, input) {
 
     const options = {
         qs: {
-            dir: 'xxxxx' // -> uri + '?access_token=xxxxx%20xxxxx' 
+            code: process.env['POST_CODE'] 
         },
         body: {
             some: 'payload'
@@ -14,7 +14,7 @@ module.exports = function (context, input) {
 
     context.log('JavaScript manually triggered function called with input:', input);
 
-    RxHttpRequest.post('http://posttestserver.com/posts', options).subscribe(
+    RxHttpRequest.post('https://sstladok3.azurewebsites.net/api/post', options).subscribe(
         (data) => {
             if (data.response.statusCode === 201) {
                 console.log(data.body); // Show the JSON response object.
