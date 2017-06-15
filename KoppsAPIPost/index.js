@@ -3,6 +3,9 @@ module.exports = function (context, input) {
     const RxHttpRequest = require("@akanass/rx-http-request").RxHR;
 
     const options = {
+        qs: {
+            dir: 'xxxxx' // -> uri + '?access_token=xxxxx%20xxxxx' 
+        },
         body: {
             some: 'payload'
         },
