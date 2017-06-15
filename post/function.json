@@ -1,0 +1,27 @@
+{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ],
+      "authLevel": "function"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "serviceBus",
+      "name": "ladok3message",
+      "topicName": "ladok3-feed-mock",
+      "connection": "LADOK3_FEED_MOCK_CONNECTION_STRING",
+      "accessRights_": "Manage",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}

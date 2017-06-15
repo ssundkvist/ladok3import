@@ -1,0 +1,29 @@
+{
+  "bindings": [
+    {
+      "name": "ladokfeedtimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 1 1 1 12 *"
+    },
+    {
+      "type": "documentDB",
+      "name": "lastIdDocument",
+      "databaseName": "ladok3feed",
+      "collectionName": "context",
+      "createIfNotExists": true,
+      "connection": "sstladok3_DOCUMENTDB",
+      "direction": "out"
+    },
+    {
+      "type": "documentDB",
+      "name": "lastIdDocumentIn",
+      "databaseName": "ladok3feed",
+      "collectionName": "context",
+      "id": "lastId",
+      "connection": "sstladok3_DOCUMENTDB",
+      "direction": "in"
+    }
+  ],
+  "disabled": true
+}
