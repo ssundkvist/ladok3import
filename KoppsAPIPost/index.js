@@ -1,6 +1,6 @@
 module.exports = function (context, input) {
 
-    const RxHttpRequest = require("rx-http-request");
+    const RxHttpRequest = require("@akanass/rx-http-request").RxHR;
 
     const options = {
         body: {
@@ -13,13 +13,15 @@ module.exports = function (context, input) {
 
     RxHttpRequest.post('http://posttestserver.com/posts', options).subscribe(
         (data) => {
- 
             if (data.response.statusCode === 201) {
-                console.log(data.body); // Show the JSON response object. 
+                console.log(data.body); // Show the JSON response object.
+                context.done(); 
             }
         },
-        (err) => console.error(err) // Show error in console 
+        (err) => {
+            console.error(err);
+            context.done();
+        } // Show error in console 
     );
 
-    context.done();
 };

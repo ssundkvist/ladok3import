@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "rx-http-request": "^1.2.0"
+    "@akanass/rx-http-request": "^1.2.0"
   }
 }
