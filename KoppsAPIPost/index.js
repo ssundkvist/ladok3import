@@ -23,7 +23,7 @@ module.exports = function (context, input) {
         },
         (err) => {
             console.error(err);
-            context.done();
+            context.done(err);
         } // Show error in console 
     );
 
