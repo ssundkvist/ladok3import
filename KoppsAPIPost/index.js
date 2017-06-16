@@ -3,6 +3,10 @@ module.exports = function (context, input) {
     const RxHttpRequest = require("@akanass/rx-http-request").RxHR;
 
     const options = {
+        auth: {
+            user: process.env['KOPPS_USERNAME'],
+            pass: process.env['KOPPS_PASSWORD']
+        },
         qs: {
             code: process.env['POST_CODE'] 
         },
