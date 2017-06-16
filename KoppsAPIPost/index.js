@@ -9,6 +9,7 @@ module.exports = function (context, input) {
         body: {
             some: 'payload'
         },
+        timeout: 2000,
         json: true // Automatically stringifies the body to JSON 
     };
 
