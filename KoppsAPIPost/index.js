@@ -2,10 +2,12 @@ module.exports = function (context, input) {
 
     const RxHttpRequest = require("@akanass/rx-http-request").RxHR;
 
+    const url = process.env['POST_URL'];
+
     const options = {
         auth: {
-            user: process.env['KOPPS_USERNAME'],
-            pass: process.env['KOPPS_PASSWORD']
+            user: process.env['POST_USERNAME'],
+            pass: process.env['POST_PASSWORD']
         },
         qs: {
             code: process.env['POST_CODE'] 
@@ -19,7 +21,7 @@ module.exports = function (context, input) {
 
     context.log('JavaScript manually triggered function called with input:', input);
 
-    RxHttpRequest.post('https://sstladok3.azurewebsites.net/api/post', options).subscribe(
+    RxHttpRequest.post(url, options).subscribe(
         (data) => {
             if (data.response.statusCode === 201) {
                 console.log(data.body); // Show the JSON response object.
