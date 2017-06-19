@@ -9,6 +9,9 @@ module.exports = function (context, input) {
             user: process.env['POST_USERNAME'],
             pass: process.env['POST_PASSWORD']
         },
+        headers: {
+            'User-Agent': process.env['POST_USER_AGENT']
+        },
         qs: {
             code: process.env['POST_CODE'] 
         },
