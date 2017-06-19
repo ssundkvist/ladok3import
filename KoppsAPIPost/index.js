@@ -26,7 +26,7 @@ module.exports = function (context, input) {
 
     RxHttpRequest.post(url, options).subscribe(
         (data) => {
-            console.log("Received data :-)");
+            console.log('Received data');
             if (data.response.statusCode === 201) {
                 console.log(data.body); // Show the JSON response object.
                 context.done(); 
@@ -36,9 +36,10 @@ module.exports = function (context, input) {
             }
         },
         (err) => {
+            console.log('Failed data');
             console.error(err);
             context.done(err);
         } // Show error in console 
     );
-
+    console.log('Not waiting for data');
 };
