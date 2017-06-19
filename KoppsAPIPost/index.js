@@ -29,6 +29,9 @@ module.exports = function (context, input) {
             if (data.response.statusCode === 201) {
                 console.log(data.body); // Show the JSON response object.
                 context.done(); 
+            } else {
+                console.log(data.response.statusCode + " " + data.body); // Show the JSON response object.
+                context.done(); 
             }
         },
         (err) => {
