@@ -26,6 +26,7 @@ module.exports = function (context, input) {
 
     RxHttpRequest.post(url, options).subscribe(
         (data) => {
+            console.log("Received data :-)");
             if (data.response.statusCode === 201) {
                 console.log(data.body); // Show the JSON response object.
                 context.done(); 
