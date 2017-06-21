@@ -22,6 +22,9 @@ module.exports = function (context, input) {
         json: true // Automatically stringifies the body to JSON 
     };
 
+
+    const log = console.log;
+    log("ye");
     context.log('JavaScript manually triggered function called with input:', input);
 
     RxHttpRequest.post(url, options).subscribe(
