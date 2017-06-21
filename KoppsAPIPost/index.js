@@ -26,9 +26,19 @@ module.exports = function (context, input) {
     context.log('JavaScript manually triggered function called with input:', input);
 
     RxHttpRequest.post(url, options).subscribe(
-        result => context.log('body: %s, code: %s', JSON.stringify(result.body), result.response.statusCode),
-        error => context.log('onError: %s', error),
-        () => context.done()
+        result => {
+            if (data.response.statusCode === 200 ||  data.response.statusCode === 201) {
+                context.log('Success: %', JSON.stringify(data.body));
+                context.done();
+            } else {
+                context.log('%s %s', result.response.statusCode, JSON.stringify(result.body));
+                context.done(JSON.stringify(result.body));
+            }
+        },
+        error => {
+            context.log('Failed to post to %s: %s', url, JSON.stringify(error));
+            context.done(JSON.stringify(error));
+        }
     );
 
     context.log('Synchronous part done');
