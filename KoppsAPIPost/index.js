@@ -23,24 +23,21 @@ module.exports = function (context, input) {
     };
 
 
-    const log = console.log;
-    log("ye");
     context.log('JavaScript manually triggered function called with input:', input);
 
     RxHttpRequest.post(url, options).subscribe(
         function (result) {
-            console.log("result " + result);
+            context.log("result " + result);
             context.done();
         },
         function (error) {
-            console.log("ERRRORR!!!!");
-            console.log("error", error);
+            context.log("error", error);
             context.done();
         }, function () {
-            console.log("complete");
+            context.log("complete");
             context.done();
         }
     ); 
-    console.log('Not waiting for data');
+    context.log('Not waiting for data');
     context.done();
 };
