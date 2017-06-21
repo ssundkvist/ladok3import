@@ -22,17 +22,14 @@ module.exports = function (context, input) {
         json: true // Automatically stringifies the body to JSON 
     };
 
-
-    context.log('JavaScript manually triggered function called with input:', input);
-
     RxHttpRequest.post(url, options).subscribe(
-        result => {
+        data => {
             if (data.response.statusCode === 200 ||  data.response.statusCode === 201) {
                 context.log('Success: %', JSON.stringify(data.body));
                 context.done();
             } else {
-                context.log('%s %s', result.response.statusCode, JSON.stringify(result.body));
-                context.done(JSON.stringify(result.body));
+                context.log('%s %s', data.response.statusCode, JSON.stringify(data.body));
+                context.done(JSON.stringify(data.body));
             }
         },
         error => {
@@ -40,7 +37,4 @@ module.exports = function (context, input) {
             context.done(JSON.stringify(error));
         }
     );
-
-    context.log('Synchronous part done');
-
 };
