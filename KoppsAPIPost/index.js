@@ -30,11 +30,14 @@ module.exports = function (context, input) {
             context.done();
         },
         function (error) {
+            console.log("ERRRORR!!!!");
             console.log("error", error);
+            context.done();
         }, function () {
             console.log("complete");
             context.done();
         }
     ); 
     console.log('Not waiting for data');
+    context.done();
 };
