@@ -12,9 +12,6 @@ module.exports = function (context, input) {
         headers: {
             'User-Agent': process.env['POST_USER_AGENT']
         },
-        qs: {
-            code: process.env['POST_CODE']
-        },
         body: JSON.stringify(input),
         timeout: 2000,
         json: true // Automatically stringifies the body to JSON 
