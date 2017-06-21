@@ -26,7 +26,7 @@ module.exports = function (context, input) {
     context.log('JavaScript manually triggered function called with input:', input);
 
     RxHttpRequest.post(url, options).subscribe(
-        result => context.log('body: %s, code: %s', result.body, result.response.statusCode),
+        result => context.log('body: %s, code: %s', JSON.stringify(result.body), result.response.statusCode),
         error => context.log('onError: %s', error),
         () => context.done()
     );
