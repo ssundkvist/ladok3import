@@ -13,7 +13,7 @@ module.exports = function (context, input) {
             'User-Agent': process.env['POST_USER_AGENT']
         },
         qs: {
-            code: process.env['POST_CODE'] 
+            code: process.env['POST_CODE']
         },
         body: {
             some: 'payload'
@@ -26,18 +26,11 @@ module.exports = function (context, input) {
     context.log('JavaScript manually triggered function called with input:', input);
 
     RxHttpRequest.post(url, options).subscribe(
-        function (result) {
-            context.log("result " + result);
-            context.done();
-        },
-        function (error) {
-            context.log("error", error);
-            context.done();
-        }, function () {
-            context.log("complete");
-            context.done();
-        }
-    ); 
-    context.log('Not waiting for data');
-    context.done();
+        result => console.log('onNext: %s', result),
+        error => console.log('onError: %s', error),
+        () => context.done()
+    );
+
+    context.log('Synchronous part done');
+
 };
