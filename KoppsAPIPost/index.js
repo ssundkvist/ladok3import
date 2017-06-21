@@ -15,9 +15,7 @@ module.exports = function (context, input) {
         qs: {
             code: process.env['POST_CODE']
         },
-        body: {
-            some: 'payload'
-        },
+        body: JSON.stringify(input),
         timeout: 2000,
         json: true // Automatically stringifies the body to JSON 
     };
