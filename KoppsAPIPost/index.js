@@ -1,5 +1,7 @@
 module.exports = function (context, input) {
 
+    context.log(input);
+
     const RxHttpRequest = require("@akanass/rx-http-request").RxHR;
 
     const url = process.env['POST_URL'];
