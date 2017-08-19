@@ -1,0 +1,20 @@
+{
+    "bindings": [
+        {
+            "schedule": "*/10 * * * * *",
+            "name": "timerTrigger",
+            "type": "timerTrigger",
+            "direction": "in"
+        },
+        {
+            "name" : "topic",
+            "topicName" : "ladok3-feed-mock",
+            "subscriptionName" : "kopps-ladok3-import-mock",
+            "connection" : "LADOK3_FEED_WRITE_CONNECTION",
+            "accessRights" : "send",
+            "type" : "serviceBus",
+            "direction" : "out"
+        }
+    ],
+    "disabled": false
+  }
