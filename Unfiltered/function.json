@@ -1,0 +1,14 @@
+{
+    "bindings": [
+      {
+        "name": "subscription",
+        "topicName": "ladok3-feed-mock",
+        "subscriptionName": "kopps-ladok3-import-mock",
+        "connection": "LADOK3_FEED_READ_CONNECTION",
+        "accessRights": "listen",
+        "type": "serviceBusTrigger",
+        "direction": "in"
+      }
+    ],
+    "disabled": false
+  }
