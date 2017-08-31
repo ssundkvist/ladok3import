@@ -1,0 +1,85 @@
+context =>
+
+2017-08-20T14:02:44.748 invocationId
+2017-08-20T14:02:44.748 executionContext
+2017-08-20T14:02:44.748 log
+2017-08-20T14:02:44.748 bindings
+2017-08-20T14:02:44.748 bind
+2017-08-20T14:02:44.748 bindingData
+2017-08-20T14:02:44.748 done
+
+context.invocationId == UUID
+context.executionContext = {
+	invocationId: '03554ddb-1645-4c25-aea0-4c61be4bde32',
+	functionName: 'Unfiltered',
+	functionDirectory: 'D:\\home\\site\\wwwroot\\Unfiltered' }
+}
+
+context.log =  function () {
+                var message = util.format.apply(null, arguments);
+                origLog({ lvl: traceLevel, msg: message });
+            }
+
+context.bindings = {
+    subscription: 'Service Bus queue message created at [object Object]'
+}
+
+context.bind = function (d, cb) {
+    return f(d, cb, ctx); 
+}
+
+context.bindingData = { 
+  deliveryCount: 1,
+  deadLetterSource: null,
+  expiresAtUtc: 2017-08-20T22:09:45.954Z,
+  enqueuedTimeUtc: 2017-08-20T14:09:45.954Z,
+  messageId: '0ae66c2604614568a232dfd5dda6b19f',
+  contentType: 'application/octet-stream',
+  replyTo: null,
+  sequenceNumber: 32088147345014784,
+  to: null,
+  label: null,
+  correlationId: null,
+  properties: {
+      '$AzureWebJobsParentId': 'c55ffb30-9b5b-4731-b6ac-afdac733824c' 
+  },
+  sys: { 
+      methodName: 'Unfiltered',
+	  utcNow: 2017-08-20T14:09:45.714Z 
+  },
+  invocationId: '5607dea3-2263-4c62-a688-fa97b7a8e371' 
+}
+
+
+
+
+{ 
+    invocationId: 'af7910d9-128b-4b35-9763-000e7723951b',
+    executionContext: {
+	    invocationId: 'af7910d9-128b-4b35-9763-000e7723951b',
+        functionName: 'ServiceBus',
+        functionDirectory: 'D:\\home\\site\\wwwroot\\ServiceBus'
+	},
+    log: { 
+	    [Function] error: [Function],
+        warn: [Function],
+        info: [Function],
+        verbose: [Function] 
+	},
+	bindings: { 
+	    timerTrigger: {
+		    isPastDue: false 
+		},
+        topic: 'Service Bus queue message created at [object Object]' 
+	},
+    bind: [Function],
+    bindingData: {
+	    timerTrigger: '',
+        sys: {
+		    methodName: 'ServiceBus',
+			utcNow: 2017-08-20T14:16:02.474Z
+		},
+        invocationId: 'af7910d9-128b-4b35-9763-000e7723951b' 
+	},
+    done: [Function] 
+}
